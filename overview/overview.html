@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MEAN overview</title>
+    <script type="text/javascript">
+    // var x = 10;
+    // console.log(x);
+    // var myName = 'Kadie';
+    // console.log(myName);
+    // var myName = 'Kadie';
+    // var myAge = 29;
+    // var myBirthday;
+    // console.log('Hello World!');
+    // // => Hello World!
+    // console.log(myName);
+    // // => Kadie
+    // console.log(myAge);
+    // // => 29
+    // console.log(myBirthday);
+    // // => undefined
+    // var x = [1, 2, 3, 4];
+    // var y = x;
+    // console.log(x);
+    // console.log(y);
+    // var x = [1, 2, 3];
+    // var y = x;
+    // x.push('Hello world!')
+    // // push adds to the end of arrays in JavaScript
+    // console.log(x);
+    // console.log(y);
+    // let x = Math.floor(Math.random() * 20);
+    // console.log(x);
+    // // => logs random number between 0 and 19
+    // let y = Math.floor(Math.random() * 21);
+    // console.log(y);
+    // // => logs a random number between 0 and 20
+    // let z = Math.floor(Math.random() * 20) + 1;
+    // console.log(z);
+    // // => logs a random number between 1 and 20
+    // let x = 11;
+    // let y = 5;
+    // let z = x % y;
+    // console.log(z);
+    // // => 1
+
+    // let x = 16;
+    // console.log(x % 2);
+    // // when we modulus by 2, even numbers will return 0
+    // let y = 17;
+    // console.log(y % 2);
+    // // while odd numbers will return a value that isn't 0!
+
+    // let x = "Hello world";
+    // let y = 'Hello World';
+    // console.log(x);
+    // console.log(y);
+    // // Single or double quotes represent the boundries of our string
+
+    // let firstName = "Oscar";
+    // let lastName = "Vazquez";
+    // let message = "Hello, my name is " + firstName + " " + lastName;
+    // console.log(message);
+
+    // let firstName = "Oscar";
+    // let lastName = "Vazquez";
+    // let message = `Hello, my name is ${firstName} ${lastName}`;
+    // // Take note of the backticks instead of quotes
+    // console.log(message
+
+    // let haiku = "Having been erased, \nThe document you're seeking \nMust now be retyped."
+    // console.log(haiku);
+
+    // let text = 'Hello I\m Oscar';
+    // console.log(text);
+    // console.log('\u263A        \u2603        \u272f');
+    // console.log("Hello I\tm Oscar");
+    // console.log("Hello I\vm Oscar");
+    // // // console.log("Hello I\u Oscar");
+    // // console.log("Hello I\n Oscar");
+    // function eat_cake() {
+    //   console.log("eat cake");
+    // }
+    //
+    // function dont_eat_cake() {
+    //   console.log("dont_eat_cake");
+    // }
+    //
+    // var hunger = true;
+    //
+    // if(hunger === true){
+    // eat_cake();
+    // };
+
+    // let diet = false;
+    // if(diet){
+    //     dont_eat_cake();
+    // }else{
+    //     eat_cake();
+    // }
+
+
+    // let score = 4;
+    // if(score === 5){
+    //     console.log('You got 5 out of 5');
+    // }else if(score === 4){
+    //     console.log('You got 4 out of 5');
+    // }else if(score === 3){
+    //     console.log('You got 3 out of 5');
+    // }else if(score === 2){
+    //     console.log('You got 2 out of 5');
+    // }else if(score === 1){
+    //     console.log('You got 1 out of 5');
+    // };
+
+    // let cake = true;
+    // let hunger = true;
+    // let birthday = "May 13th";
+    // if(cake){
+    // // first we check if there is a cake, which is true
+    //     if(hunger === true && birthday === "May 13th"){
+    //     // then we check if both hunger is true and if
+    //     // birthday is set to a matching string.
+    //         eat_cake();
+    //         // all conditions are met, so we eat cake!
+    //     }else{
+    //         dont_eat_cake();
+    //         // while the cake exists (or else we wouldn't be
+    //         // executing this line) we where either not hungry or
+    //         // it was not our birthday, so we won't eat cake :(
+    //     }
+    // }
+    // if there is no cake, then none of the above statements will
+    // even evaluate. This is because 'if(cake)' equalled to false!
+    // let diet = true;
+    // // diet is truthy
+    // if(!diet){
+    // // if NOT diet
+    //     eat_cake();
+    //     // let them eat cake!
+    //   }
+    // else {
+    //   dont_eat_cake();
+    // }
+    //
+    //
+    // // let x = [1, 2, 3];
+    // let y = ['blue', 'yellow', 'magical unicorns'];
+    // let z = [1, [], null, 'hello world!'];
+    //
+    // let x = [1, 2, 3];
+    // x.push(4);
+    // console.log(x);
+    // // => [1, 2, 3, 4]
+    //
+    // x = [1, 2, 3, 4];
+    // x.pop();
+    // console.log(x);
+    // // => [1, 2, 3]
+    //
+    // y = ['blue', 'yellow', 'magical unicorns'];
+    // console.log(y[1]);
+    // // => 'yellow'
+    //
+    // z = [1, [], null, 'hello world!'];
+    // console.log(z.length);
+    // // => 4
+    //
+    // x = [];
+    // x[334] = 'Hello world!';
+    // console.log(x);
+    //
+    // x = [1, 2, 3];
+    // if(x.constructor === Array){
+    //     console.log('Yes x is an array!');
+    // }else{
+    //     console.log('No x is not an array!');
+    // };
+
+    // for(var i = 0; i < 7; i++){
+    //     console.log('hello');
+    // };
+    // for ( let i = 0; i < 7; i++ ) {
+    //     console.log('hello');
+    // };
+    //
+    // let total = 0;
+    // for(let i = 10; i > 0; i--){
+    //     total = total + i;
+    // }
+    // console.log(total);
+    //
+    // let num = 1;
+    // while (num < 6){
+    //     console.log("I'm counting! The number is " + num);
+    //     num = num + 1;
+    //     console.log("I'm counting! The number is " + num);
+    //
+    // }
+    // console.log("We are done. Goodbye world!");
+
+//     let num = 5;
+//     do {
+//         console.log("I'm counting! The number is " + num);
+//         num = num + 1;
+//     }
+//     while (num < 6);
+//     console.log("We are done. Goodbye world!");
+// // ---------------------------------------------------
+//     let num2 = 6;
+//     do {
+//         console.log("I'm counting! The number is " + num);
+//         num2 = num2 + 1;
+//     }
+//     while (num2 < 6);
+//
+//
+//     let colors = ['blue', 'green', 'red', 'chartreuse'];
+//     // a simple array of strings
+//     for(let i = 0; i < colors.length; i++){
+//     // by using the length of our colors array, we can make the condition
+//     // of our for loop match the number of elements in the array!
+//         console.log(colors[i]);
+//         // now we can use i to log the elements of the color array induvidually
+//     };
+
+
+
+    // let names = ['Anna', 'Oscar', 'Kadie', 'Steve', 'Elle', 'Boris', 'Lord Humongous'];
+    // for(let i = 0; i < names.length; i++){
+    //     if(names[i] === 'Kadie'){
+    //         console.log('Kadie is in our array!');
+    //         break;
+    //     }
+    // }
+    // console.log('We finished looping!');
+
+
+
+    // let names = ['Anna', 'Oscar', 'Kadie', 'Steve', 'Elle', 'Boris', 'Lord Humongous'];
+    // for(let i = 0; i < names.length; i++){
+    //     if(names[i] === 'Steve'){ continue };
+    //     console.log(names[i]);
+    // };
+    //
+    //
+    // function sayName(name){
+    //     console.log("Hello my name is " + name);
+    // };
+    // sayName('Morty');
+    //
+    // function sayNamePreminum(first_name, last_name){
+    //     console.log("Hello my name is " + first_name + " " + last_name);
+    // };
+    // sayNamePreminum("Stewart", "Dent");
+    // sayNamePreminum("Rocky", "Balboa");
+
+
+    // function sayName(name){
+    //     console.log("Hello my name is " + name);
+    // };
+    // let x = sayName('Morty');
+    // console.log(x);
+
+
+    // function sayName(name){
+    //     return "Hello my name is " + name;
+    // };
+    // sayName("Cinderella1");
+    // let message = sayName("Cinderella2");
+    // console.log(message);
+
+
+    // function ten(){
+    //   console.log("ten")
+    //     return 10;
+    //     console.log("twenty")
+    //
+    // };
+    // let twenty = ten() * ten();
+    // // ten();
+    // console.log(twenty);
+
+    // -- standalone function ---
+    // function sayName1(name){
+    //     console.log("Hello my name is " + name);
+    // };
+    //
+    // // -- anonymous function, stored in a variable --
+    // let sayName2 = function(name){
+    //     console.log("Hello my name is " + name);
+    // };
+    //
+    // // -- standalone function, stored in a variable --
+    // let sayName3 = function sayName4(name){
+    //     console.log("Hello my name is " + name);
+    // };
+    //
+    // // sayName1("1")
+    // // sayName2("2")
+    // // sayName3("3")
+    //
+    //
+    // (function(){
+    //     console.log("Hello world!");
+    // })();
+
+
+
+    // arrow functions are anonymous functions without the 'function' keyword.
+    // let sayName4 = (name) => { console.log("Hello my name is " + name) };
+    // sayName4("Dolores");
+
+
+    </script>
+
+  </head>
+  <body>
+
+
+          <!-- <div id="message">
+              Hello World!
+          </div>
+      <script>
+          let x = document.getElementById("message").innerHTML;
+          console.log(x);
+      </script> -->
+
+
+
+          <!-- <div id="message">
+              Hello World!
+          </div>
+      <script>
+          document.getElementById("message").innerHTML = "I love JavaScript!";
+      </script> -->
+
+
+
+          <!-- <div id="message">
+              Hello World!
+          </div>
+      <script>
+          let message = "<h1>Look, I'm a dynamic header!</h1>";
+          document.getElementById("message").innerHTML = message;
+      </script>
+ -->
+
+
+          <ol id="fruit">
+              <li>Bananas</li>
+              <li>Oranges</li>
+              <li>Apples</li>
+          </ol>
+      <script>
+          let new_fruit = document.createElement("li");
+          // create an empty li
+          new_fruit.innerHTML = "Pears";
+          // modify it's innerHTML content with the a string
+          document.getElementById("fruit").appendChild(new_fruit);
+          // append our new DOM element to the id 'fruit'
+      </script>
+
+
+
+  </body>
+</html>
