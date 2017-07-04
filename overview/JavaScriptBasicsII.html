@@ -6,11 +6,15 @@
     <script type="text/javascript">
 
     function magic_multiply(x, y){
-// Numbers
-      if (typeof x == "number" && typeof y == "number") {
-        let z = x * y;
+
+// All inputs 0
+      if (x == 0 && y == 0) {
+        let z = "All inputs 0";
+        // console.log("All inputs 0");
         return z;
       }
+
+
 // Array
       else if (x.constructor === Array && typeof y == "number") {
         let z = [];
@@ -41,6 +45,11 @@
         return z;
       }
 
+// Numbers
+      if (typeof x == "number" && typeof y == "number") {
+        let z = x * y;
+        return z;
+      }
 
       else {
         let z = "Error: Please enter corenct input";
