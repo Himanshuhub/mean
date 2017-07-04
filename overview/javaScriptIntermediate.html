@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Intermediate</title>
+    <script type="text/javascript">
+    // Part I
+    function star_string(n) {
+      var x = "";
+      for (var i = 0; i < n; i++) {
+        x = x + "*"
+      }
+      return x;
+    }
+
+
+    // let test1 = star_string(8);
+    // console.log(test1);
+
+    // Part II
+    function draw_stars(arr) {
+      for (var i = 0; i < arr.length; i++) {
+        var x = "";
+        for (var j = 0; j < arr[i]; j++) {
+          x = x + "*"
+        }
+        console.log(x);
+      }
+      return;
+    }
+
+    // draw_stars([4, 6, 1, 3, 5, 7, 25]);
+    // let test2 = draw_stars([4, 6, 1, 3, 5, 7, 25]);
+    // console.log(test2);
+
+
+    // Part III
+    function draw_stars_strings(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        var x = "";
+        var y = "";
+        if (typeof arr[i] == "number") {
+          for (let j = 0; j < arr[i]; j++) {
+            x = x + "*"
+          }
+          console.log(x);
+        }
+        else if (typeof arr[i] == "string") {
+          for (let j = 0; j < arr[i].length; j++) {
+            y = y + arr[i][0];
+          }
+          console.log(y);
+        }
+        // console.log(x);
+        // console.log(y);
+      }
+      return;
+    }
+
+
+    draw_stars_strings([4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"]);
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
