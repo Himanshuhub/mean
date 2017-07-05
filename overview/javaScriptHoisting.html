@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Hoisting</title>
+    <script type="text/javascript">
+    // 1
+    // console.log(hello);
+    // var hello = ‘world’;
+// error
+// -------------------------------------------
+
+// 2
+    // var needle = "haystack";
+    // test();
+    //
+    // function test(){
+    // 	var needle = "magnet";
+    // 	console.log(needle);
+    // }
+
+// magnet
+// -------------------------------------------
+
+// 3
+// var brendan = "super cool";
+// function print(){
+// 	brendan = "only okay";
+// 	console.log(brendan);
+// }
+// console.log(brendan);
+
+// super cool
+// -------------------------------------------
+
+// 4
+// var food = "chicken";
+// console.log(food);
+// eat();
+// function eat(){
+// 	food = "half-chicken";
+// 	console.log(food);
+// 	var food = "gone";
+// }
+// chicken, half-chicken
+// -------------------------------------------
+
+// 5
+// mean();
+// console.log(food);
+// var mean = function() {
+// 	food = "chicken";
+// 	console.log(food);
+// 	var food = "fish";
+// 	console.log(food);
+// }
+// console.log(food);
+//error mean is not a function
+// -------------------------------------------
+
+// 6 Ask instructor for this
+// console.log(genre);
+// var genre = "disco"; //undefined
+// rewind();
+// function rewind() {
+// 	genre = "rock";
+// 	console.log(genre); //rock
+// 	var genre = "r&b";
+// 	console.log(genre); //r&b
+// }
+// console.log(genre); //disco
+// disco, rock, r&b, disco
+// -------------------------------------------
+
+// 7
+dojo = "san jose";
+console.log(dojo); //error
+learn();
+function learn() {
+	dojo = "seattle";
+	console.log(dojo);  //
+	var dojo = "burbank";
+	console.log(dojo);  //
+}
+console.log(dojo);  //
+
+// -------------------------------------------
+// -------------------------------------------
+// -------------------------------------------
+// -------------------------------------------
+
+
+
+    </script>
+
+
+  </head>
+  <body>
+    <h1>JavaScript Hoisting</h1>
+
+  </body>
+</html>
