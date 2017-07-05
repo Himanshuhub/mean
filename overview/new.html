@@ -19,20 +19,226 @@
     // console.log(anika);
 
 
-    function personConstructor(name, age){
-        this.name = name;
-        this.age = age;
-        this.greet = function(){
-            console.log("Hello my name is " + this.name + " and I am " + this.age + " years old!");
-        }
-    }
-    var emily = new personConstructor("Emily", 22);
-    // using this & new, we can now refer to the 'name' attribute of our instance!
-    emily.greet = function(){
-        console.log("My name is " + this.name + " and I'm the coolest ever!");
-    }
+    // function personConstructor(name, age){
+    //     this.name = name;
+    //     this.age = age;
+    //     this.greet = function(){
+    //         console.log("Hello my name is " + this.name + " and I am " + this.age + " years old!");
+    //     }
+    // }
+    // var emily = new personConstructor("Emily", 22);
+    // // using this & new, we can now refer to the 'name' attribute of our instance!
+    // emily.greet = function(){
+    //     console.log("My name is " + this.name + " and I'm the coolest ever!");
+    // }
+    //
+    // emily.greet();
 
-    emily.greet();
+    // console.log(this);
+
+
+    // the naming convention for Classes and Object Constructors is that they're capitalized and singular
+    // function Person(name, age){
+    //     var privateVariable = "This variable is private";
+    //     var privateMethod = function(){
+    //         console.log(this);
+    //     }
+    //     this.name = name;
+    //     this.age = age;
+    //     this.greet = function(){
+    //         console.log("Hello my name is " + this.name + " and I am " + this.age + " years old!");
+    //     }
+    // }
+    // var eliza = new Person("Eliza", 48);
+    // console.log(eliza.privateVariable);
+    // // undefined!
+    // console.log(`${eliza.name} ${eliza.age}`);
+    // //Eliza 48
+
+
+
+    // function Person(name, age){
+    //     var privateVariable = "This variable is private";
+    //     var privateMethod = function(){
+    //         console.log(this);
+    //     }
+    //     this.name = name;
+    //     this.age = age;
+    //     this.greet = function(){
+    //         console.log("Hello my name is " + this.name + " and I am " + this.age + " years old!");
+    //         // we can access our attributes within the constructor!
+    //         console.log("Also my privateVariable says: " + privateVariable)
+    //         // we can access our methods within the constructor!
+    //         privateMethod();
+    //     }
+    // }
+    // var joe = new Person("Joe", 23);
+    // joe.greet();
+
+
+
+    // function Person(name, age){
+    //     // create a private variable that stores a reference to the new object we create
+    //     var self = this;
+    //     var privateVariable = "This variable is private";
+    //     var privateMethod = function(){
+    //         console.log("this is a private method for " + self.name);
+    //         console.log(self);
+    //     }
+    //     this.name = name;
+    //     this.age = age;
+    //     this.greet = function(){
+    //         console.log("Hello my name is " + this.name + " and I am " + this.age + " years old!");
+    //         // we can access our attributes within the constructor!
+    //         console.log("Also my privateVariable says: " + privateVariable)
+    //         // we can access our methods within the constructor!
+    //         privateMethod();
+    //     }
+    // }
+    // var joe = new Person("Joe", 23);
+    // joe.greet();
+
+    //
+    // var MyObjConstructor = function(name){
+    //   var myPrivateVar = "Hello"; // just to show that it is hard to see this private var easily
+    //   this.name = name; // but you can see the name!
+    //   this.method = function(){
+    //     console.log( "I am a method");
+    //   };
+    // }
+    // var obj1 = new MyObjConstructor('object1');
+    // var obj2 = new MyObjConstructor('object2');
+    // console.log(obj1);
+    //
+    //
+    // obj1.newProperty = "newProperty!";
+    // obj1.__proto__.anotherProperty = "anotherProperty!";
+    // console.log(obj1.anotherProperty); // anotherProperty!
+    // console.log(obj1.newProperty); // newProperty!
+    // // What about obj2?
+    // console.log(obj2.newProperty); // undefined
+    // console.log(obj2.anotherProperty); // anotherProperty! <= THIS IS THE COOL PART!
+    //
+    // // After we create our MyObjConstructor:
+    // MyObjConstructor.prototype.methodName = function(){
+    //   //do stuff here!
+    // }
+    //
+    //
+    //
+    // function Cat( cat_name ) {
+    //   var name = cat_name;
+    //   this.getName = function() {
+    //     return name;
+    //   };
+    // }
+    // //adding a method to the cat prototype
+    // Cat.prototype.sayHi = function(){
+    //   console.log('meow');
+    // };
+    // //adding properties to the cat prototype
+    // Cat.prototype.numLegs = 4;
+    // var muffin = new Cat('muffin');
+    // var biscuit = new Cat('biscuit');
+    // console.log(muffin, biscuit);
+    // //we access prototype properties the same way as we would access 'own' properties
+    // muffin.sayHi();
+    // biscuit.sayHi();
+    // console.log(muffin.numLegs);
+    // // poor mutant cats: muffin.__proto__.numLegs ++;
+    // // doing this to muffin will mess up all the cats!
+    //
+
+
+    // Define the class
+    // function Person(name, age){
+    //     this.name = name;
+    //     this.age = age;
+    //     return this;
+    // }
+    // // Attach class methods using .prototype
+    // Person.prototype.greet = function(){
+    //     console.log("Hello my name is " + this.name + " and I am " + this.age + " years old!");
+    //     return this;
+    // }
+    // // Create new instances with the new keyword
+    // var amelia = new Person('Amelia', 36);
+    // // Create instance methods by attaching the function directly to an instance
+    // amelia.sing = function(){
+    //     console.log("Lalalala!");
+    // }
+    //
+    //
+    // Person("Himanshu", 32);
+    // console.log(Person("Himanshu", 32));
+    // Person.prototype.greet();
+    // amelia.sing();
+    // console.log(amelia);
+
+
+
+    // // Private variables are scoped to the constructor with the var keyword
+    // function Car(make, model){
+    //     var odometer = 0;
+    //     this.make = make;
+    //     this.model = model;
+    //
+    //     // To make functions private, we scope them to the constructor
+    //     function updateOdometer(distance){
+    //         odometer += distance;
+    //     };
+    //
+    //     // 'Getter' functions help us read private variables
+    //     this.readOdometer = function(){
+    //       return odometer;
+    //     }
+    //
+    //     // 'Setter' functions help us update private variables
+    //     this.drive = function(distance){
+    //       updateOdometer(distance);
+    //       // return this will allow us to chain methods
+    //       return this;
+    //     }
+    // }
+    // var my_car_instance = new Car("Chevy", "Camero");
+    // // by returning this, we can chain drive()
+    // my_car_instance.drive(50).drive(90);
+    // // private variable is undefined
+    // console.log(my_car_instance.odometer);
+    // // but we can read it with our getter function
+    // console.log(my_car_instance.readOdometer());
+
+
+// Ninja Class
+function Ninja(name, health=100) {
+  var self = this;
+  this.name = name;
+  this.health = health;
+  var speed = 3;
+  var strength = 3;
+  this.sayName = function() {
+    console.log(self.name);
+
+  }
+  this.showStats = function() {
+    console.log(strength, speed, self.health);
+
+  }
+  this.drinkSake = function() {
+    this.health +=10;
+  }
+}
+
+
+var ninja1 = new Ninja("Hyabusa");
+ninja1.sayName();
+// -> "My ninja name is Hayabusa!"
+ninja1.showStats();
+// -> "Name: Hayabusa, Health: 100, Speed: 3, Strength: 3"
+ninja1.drinkSake();
+// -> "Name: Hayabusa, Health: 100, Speed: 3, Strength: 3"
+ninja1.showStats();
+
 
     </script>
   </head>
