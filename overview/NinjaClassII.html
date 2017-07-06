@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Class II</title>
+    <script type="text/javascript">
+
+    // Ninja Class
+    function Ninja(name, health=100) {
+      var self = this;
+      this.name = name;
+      this.health = health;
+      var speed = 3;
+      var strength = 3;
+      this.sayName = function() {
+        console.log(self.name);
+
+      }
+      this.showStats = function() {
+        console.log(strength, speed, self.health);
+
+      }
+      this.drinkSake = function() {
+        this.health +=10;
+      }
+      this.punch = function(target){
+        target.health -= 5;
+        console.log(`${target.name} was punched by ${this.name} and lost 5 Health!`);
+      }
+      this.kick = function(targetkick){
+        targetkick.health -= 15;
+        console.log(`${targetkick.name} was kicked by ${this.name} and lost 15 Health!`);
+      }
+    }
+
+
+    var ninja1 = new Ninja("Hyabusa");
+    // ninja1.sayName();
+    // // -> "My ninja name is Hayabusa!"
+    // ninja1.showStats();
+    // // -> "Name: Hayabusa, Health: 100, Speed: 3, Strength: 3"
+    // ninja1.drinkSake();
+    // // -> "Name: Hayabusa, Health: 100, Speed: 3, Strength: 3"
+    // ninja1.showStats();
+
+    var blue_ninja = new Ninja("Goemon");
+    var red_ninja = new Ninja("Bill Gates");
+
+    red_ninja.punch(blue_ninja);
+    // // -> "Goemon was punched by Bill Gates and lost 5 Health!"
+    // red_ninja.showStats();
+    // blue_ninja.showStats();
+
+    blue_ninja.kick(red_ninja);
+    // -> "Bill Gates was kicked by Goemon and lost 15 Health!"
+    blue_ninja.showStats();
+    red_ninja.showStats();
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
