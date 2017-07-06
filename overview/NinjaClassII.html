@@ -24,12 +24,16 @@
         this.health +=10;
       }
       this.punch = function(target){
+        if(target instanceof Ninja){
         target.health -= 5;
         console.log(`${target.name} was punched by ${this.name} and lost 5 Health!`);
       }
+      }
       this.kick = function(targetkick){
+        if(targetkick instanceof Ninja){
         targetkick.health -= 15;
         console.log(`${targetkick.name} was kicked by ${this.name} and lost 15 Health!`);
+      }
       }
     }
 
