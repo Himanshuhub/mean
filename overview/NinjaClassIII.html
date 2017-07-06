@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Class III</title>
+    <script type="text/javascript">
+    class Ninja {
+      constructor(name, health=100, speed, strength) {
+        this.name = name;
+        this.health=health;
+        this.speed=speed;
+        this.strength=strength;
+      }
+      sayName(){
+        console.log(this.name);
+      }
+      showStats(){
+        console.log(`Name: ${this.name}, Health ${this.strength}, Speed ${this.speed}, Strength ${this.health}`);
+      }
+      drinkSake(){
+        this.health += 10;
+      }
+    }
+    class Sensei extends Ninja {
+      constructor(name, health=200, speed=10, strength=10, wisdom=10) {
+        super(name, health, speed, strength);
+        this.wisdom=wisdom;
+      }
+      speakWisdom(){
+        let message = super.drinkSake();
+        console.log(message);
+        console.log("What one programmer can do in one month, two programmers can do in two months.");
+
+      }
+    }
+
+    // example output
+    let super_sensei = new Sensei("Master Splinter");
+    super_sensei.speakWisdom();
+    // -> "What one programmer can do in one month, two programmers can do in two months."
+    super_sensei.showStats();
+    // -> "Name: Master Splinter, Health: 210, Speed: 10, Strength: 10"
+
+    </script>
+  </head>
+  <body>
+    <h1>Ninja Class III</h1>
+
+  </body>
+</html>
