@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Deck of Cards</title>
+    <script type="text/javascript">
+// Deck of Cards
+
+// class Card {
+//   constructor(value, name, suit) {
+//     this.value = value;
+//     this.name = name;
+//     this.suit = suit;
+//   }
+
+class Deck {
+  constructor() {
+    this.ranks = ['Hearts', 'Diamonds', 'Spades', 'Clubs'];
+    this.values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+    // this.shuffle = shuffle;
+    this.deck = [];
+    this.createDeck();
+  }
+  createDeck(){
+    for (var i = 0; i < this.values.length; i++) {
+      for (var j = 0; j < this.ranks.length; j++) {
+        var card = {rank: this.values[i], value: this.ranks[j]};
+        this.deck.push(card);
+      }
+    }
+  }
+  shuffle() {
+    console.log("This is me SHUFFLING");
+  }
+  reset() {
+    this.deck = [];
+    this.createDeck();
+
+  }
+  deal() {
+    var randomIndex = Math.floor(Math.random(1, this.deck.length + 1));
+    return this.deck.splice(randomIndex, 1);
+  }
+}
+
+class Player {
+  constructor(name) {
+    this.name = name;
+    this.hand = [];
+
+  }
+  takeCard(deck){
+    this.hand.push(deck.deal());
+  }
+  discardCard(rank, value){
+    for (var i = 0; i < this.hand.length; i++) {
+      if (this.hand[i].rank == rank && this.hand[i],value == value) {
+        console.log("Card was found", i);
+        return this.hand.splice(i,1);
+      }
+    }
+    console.log("That no card was found");
+  }
+}
+
+
+var firstDeck = new Deck();
+console.log(firstDeck.deck[0]);
+
+var firstplayer = new Player("Oscar");
+console.log(firstplayer.name);
+
+firstplayer.takeCard(firstDeck);
+console.log(firstDeck.Deck);
+
+var hand = firstplayer.hand;
+
+console.log(firstplayer.discardCard(hand[0].rank,hand[0].value));
+
+    </script>
+  </head>
+  <body>
+<h1>Deck of Cards</h1>
+
+  </body>
+</html>
