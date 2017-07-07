@@ -5,34 +5,34 @@
     <title>Ninja Class 1</title>
     <script type="text/javascript">
     // Ninja Class
-    // function Ninja(name, health=100) {
-    //   var self = this;
-    //   this.name = name;
-    //   this.health = health;
-    //   var speed = 3;
-    //   var strength = 3;
-    //   this.sayName = function() {
-    //     console.log(self.name);
-    //
-    //   }
-    //   this.showStats = function() {
-    //     console.log(strength, speed, self.health);
-    //
-    //   }
-    //   this.drinkSake = function() {
-    //     this.health +=10;
-    //   }
-    // }
-    //
-    //
-    // var ninja1 = new Ninja("Hyabusa");
-    // ninja1.sayName();
-    // // -> "My ninja name is Hayabusa!"
-    // ninja1.showStats();
-    // // -> "Name: Hayabusa, Health: 100, Speed: 3, Strength: 3"
-    // ninja1.drinkSake();
-    // // -> "Name: Hayabusa, Health: 100, Speed: 3, Strength: 3"
-    // ninja1.showStats();
+    function Ninja(name, health=100) {
+      var self = this;
+      this.name = name;
+      this.health = health;
+      var speed = 3;
+      var strength = 3;
+      this.sayName = function() {
+        console.log(self.name);
+
+      }
+      this.showStats = function() {
+        console.log(strength, speed, self.health);
+
+      }
+      this.drinkSake = function() {
+        this.health +=10;
+      }
+    }
+
+
+    var ninja1 = new Ninja("Hyabusa");
+    ninja1.sayName();
+    // -> "My ninja name is Hayabusa!"
+    ninja1.showStats();
+    // -> "Name: Hayabusa, Health: 100, Speed: 3, Strength: 3"
+    ninja1.drinkSake();
+    // -> "Name: Hayabusa, Health: 100, Speed: 3, Strength: 3"
+    ninja1.showStats();
 
 // --------------------------------------------------------------------------------
     // class Dot {
