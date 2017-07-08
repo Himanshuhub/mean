@@ -29,8 +29,8 @@ app.post('/addtwo', function(request, response) {
   response.redirect('/');
 })
 
-app.post('/reset', function(request, response) {
-  request.session.name = 0;
+app.post('/res', function(request, response) {
+  request.session.name += 1;
   response.redirect('/');
 })
 
