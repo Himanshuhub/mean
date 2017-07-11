@@ -97,6 +97,7 @@ npm install express --save
 npm install ejs --save
 npm install express-session --save
 npm install body-parser --save
+npm install socket.io --save
 
 
 -- Under static folder create html file

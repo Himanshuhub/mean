@@ -2,17 +2,46 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Index.ejs</title>
+    <title>The great button game</title>
+       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+       <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+       <script type ="text/javascript">
+            $(document).ready(function(){
+               // this triggers the connection event in our server!
+               var socket  = io.connect();
+               // we'll write all the socket stuff after the above line!
+               $( '.addToCount').click(function(e){
+                 e.preventDefault();
+                  socket.emit( "incrementCount", {reason:  "because I want to increment socket!"});
+                  // return false;
+              });
+              $( '.resetButtonClass').click(function(e){
+                e.preventDefault();
+                 socket.emit( "reset_count", {reason:  "because I want to reset sockets!"});
+                 // return false;
+             });
+
+                socket.on( 'server_response', function (data){
+                    console.log( 'The server increments: '  + data.counter);
+                    $('#data').html(data.counter)
+                });
+                socket.on( 'server_reset', function (data){
+                    console.log( 'The server resets: '  + data.counter);
+                    $('#data').html(data.counter)
+                });
+             })
+
+       </script>
   </head>
   <body>
-    <h1>The button has been pushed: <%= counter %> time(s)</h1>
+    <h1>The button has been pushed: <span id="data"> <%= counter %></span> time(s)</h1>
     <h3>Push the button to update the count!</h3>
 
-    <form class="push" action="/epicbutton" method="post">
+    <form class="addToCount" >
       <button type="submit" name="epicbutton">Push the epic button</button>
     </form>
 
-    <form class="restButtonClass" action="/reset" method="post">
+    <form class="resetButtonClass">
       <button type="submit" name="button">Reset Count</button>
     </form>
 
