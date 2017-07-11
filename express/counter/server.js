@@ -18,9 +18,9 @@ app.get('/', function(request, response) {
     request.session.name = 1;
   }
   else{
-  request.session.name += 1;
-}
-  response.render('index', {users: request.session.name});
+    request.session.name += 1;
+  }
+  response.render('index', {counter: request.session.name});
 })
 // notice that the function is app.get(...) why do you think the function is called get?
 

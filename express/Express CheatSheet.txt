@@ -2,7 +2,7 @@
 mkdir {directory}
 
 2. Create a server.js file in directory
-cd ..
+cd {directory}
 touch server.js
 mkdir static
 mkdir views
@@ -11,12 +11,26 @@ mkdir views
 3. open server.js file in atom and insert
 var express = require("express");
 var app = express();
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+var session = require('express-session');
+
+// more new code:
+app.use(session({secret: 'codingdojorocks'}));  // string for encryption
+app.post('/users', function (req, res){
+    // set the name property of session.
+    req.session.name = req.body.name;
+    console.log(req.session.name);
+    //code to add user to db goes here!
+    // redirect the user back to the root route.
+    res.redirect('/');
+});
+
+
 app.get('/', function(request, response) {
   response.send("<h1>Hello Express</h1>");
 })
 
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
 
 // root route
 app.get('/', function (req, res){
@@ -27,10 +41,6 @@ app.post('/users', function (req, res){
   //code to add user to db goes here!
 })
 
-// root route
-app.get('/', function (req, res){
-  res.render('index', {title: "my Express project"});
-});
 // route to process new user form data:
 app.post('/users', function (req, res){
   // code to add user to db goes here!
@@ -61,21 +71,6 @@ app.get("/users/:id", function (req, res){
     // code to get user from db goes here, etc...
 });
 
-//Session data
-// new code:
-var session = require('express-session');
-// original code:
-var app = express();
-// more new code:
-app.use(session({secret: 'codingdojorocks'}));  // string for encryption
-app.post('/users', function (req, res){
-    // set the name property of session.
-    req.session.name = req.body.name;
-    console.log(req.session.name);
-    //code to add user to db goes here!
-    // redirect the user back to the root route.
-    res.redirect('/');
-});
 
 
 app.get("/users", function (request, response){
@@ -97,18 +92,19 @@ app.listen(8000, function() {
 4. npm install
 npm install express --save
 npm install ejs --save
-npm install ejs --save
-npm install ejs --save
+npm install express-session --save
+npm install body-parser --save
 
 
 -- Under static folder create html file
+cd static/
 touch main.html
 <body>
   <h1>This is a Static HTML page!</h1>
 </body>
 
 
---- unser views folder
+--- under views folder
 cd ../views
 touch index.ejs
 vim index.ejs
@@ -121,7 +117,7 @@ vim index.ejs
 
 touch users.ejs
 vim users.ejs
-
+i
 <html>
 <body>
     <h2>Here are all the users:</h2>
@@ -133,4 +129,5 @@ vim users.ejs
 </body>
 </html>
 
+cd ..
 nodemon server.js

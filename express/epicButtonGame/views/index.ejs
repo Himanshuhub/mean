@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Index.ejs</title>
+  </head>
+  <body>
+    <h1>The button has been pushed: <%= counter %> time(s)</h1>
+    <h3>Push the button to update the count!</h3>
+
+    <form class="push" action="/epicbutton" method="post">
+      <button type="submit" name="epicbutton">Push the epic button</button>
+    </form>
+
+    <form class="restButtonClass" action="/reset" method="post">
+      <button type="submit" name="button">Reset Count</button>
+    </form>
+
+  </body>
+</html>
