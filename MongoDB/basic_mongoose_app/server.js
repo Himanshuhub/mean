@@ -11,9 +11,9 @@ var mongoose = require('mongoose');
 //   our db in mongodb -- this should match the name of the db you are going to use for your project.
 mongoose.connect('mongodb://localhost/basic_mongoose');
 var UserSchema = new mongoose.Schema({
- name: String,
- age: Number
-})
+ name: { type: String, required: true, minlength: 6},
+ age: { type: Number, min: 1, max: 150 }
+}, {timestamps: true})
 mongoose.model('User', UserSchema); // We are setting this Schema in our Models as 'User'
 var User = mongoose.model('User') // We are retrieving this Schema from our Models, named 'User'
 
@@ -57,6 +57,7 @@ app.post('/users', function(req, res) {
     // if there is an error console.log that something went wrong!
     if(err) {
       console.log('something went wrong');
+      res.render('index', {title: 'you have errors!', errors: user.errors})
     } else { // else console.log that we did well and then redirect to the root route
       console.log('successfully added a user!');
       res.redirect('/');
