@@ -5,24 +5,19 @@
         <title>basic_mongoose_app</title>
 </head>
 <body>
-        <h1>basic_mongoose_app</h1>
+        <h1>Welcome to Quoting Dojo</h1>
          <% if(typeof(errors) != 'undefined' ) { %>
                  <% for (var x in errors) { %>
                <h3><%= errors[x].message %></h3>
               <% } %>
           <% } %>
-         
-<h3>
-        <% for(var i=0; i<users.length; i++){  %>
-        Name: <%= users[i].name %>,
-        Age: <%= users[i].age %><br>
-        <% }%>
-        </h3>
-        <form class="name" action="/users" method="post">
-                Name: <input type="text" name="name" value="">
-                Age: <input type="text" name="age" value="">
-                <button type="submit" name="Submit">Submit</button>
-        </form>
+
+        <form class="name" action="/quotes" method="post"><br>
+                Your Name: <input type="text" name="name" value=""><br>
+                Your Quote: <input type="text" name="quote" value=""><br>
+                <button type="submit" name="Submit">Add my Quote</button>
+        </form><br>
+        <a href="http://localhost:8000/"><button type="button" name="button">Skip to Quotes</button></a>
 
 
 </body>
