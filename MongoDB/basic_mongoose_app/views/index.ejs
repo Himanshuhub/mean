@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>basic_mongoose_app</title>
+</head>
+<body>
+        <h1>basic_mongoose_app</h1>
+<h3>
+        <% for(var i=0; i<users.length; i++){  %>
+        Name: <%= users[i].name %>,
+        Age: <%= users[i].age %><br>
+        <% }%>
+        </h3>
+        <form class="name" action="/users" method="post">
+                Name: <input type="text" name="name" value="">
+                Age: <input type="text" name="age" value="">
+                <button type="submit" name="Submit">Submit</button>
+        </form>
+
+
+</body>
+</html>
