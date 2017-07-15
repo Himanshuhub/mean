@@ -3,16 +3,16 @@ var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/basic_mongoose');
+var Schema = mongoose.Schema;
 
 var UserSchema = new mongoose.Schema({
- name: { type: String, required: true}
+ name: { type: String, required: true, minlength: 4}
 }, {timestamps: true})
 mongoose.model('User', UserSchema); // We are setting this Schema in our Models as 'User'
 var User = mongoose.model('User') // We are retrieving this Schema from our Models, named 'User'
 
 app.use(bodyParser.urlencoded({extended: true}));
 var path = require('path');
-app.use(express.static(path.join(__dirname, './static')));
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 
@@ -21,23 +21,6 @@ app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
   User.find({}, function(err,data){
     res.render('index', {users:data});
-  })
-})
-app.get('/mg/:id', function(req, res) {
-  User.find({_id: req.params.id}, function(err,data){
-    res.render('show', {users:data});
-  })
-})
-// /mongooses/edit/:id
-app.get('/update/:id', function(req, res) {
-  User.findOne({_id: req.params.id}, function(err,data){
-    res.render('update', {users:data});
-  })
-})
-
-app.get('/destroy/:id', function(req, res) {
-  User.findOne({_id: req.params.id}, function(err,data){
-    res.render('destroy', {users:data});
   })
 })
 
