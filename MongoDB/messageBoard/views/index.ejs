@@ -8,9 +8,9 @@
         <h1>The Dojo Message Board</h1>
 
         <form class="PostClass" action="/newPost" method="post">
-                Name: <input type="text" name="name" value="Sample Name">
-                Message: <input type="text" name="message" value="Sample Message">
-                <button type="submit" name="button">Post message</button>
+                Name: <input type="text" name="name" value="Sample Name"><br>
+                Message: <input type="text" name="message" style="width:550px;height:50px;" value="Sample Message"><br>
+                <button type="submit" name="button">Post message</button><br>
         </form>
 
           <% for(var i=0; i<posts.length; i++){  %>
@@ -22,9 +22,9 @@
           <p>Comments: <%= posts[i].comments[j].comment %></p>
           <% }%>
           <form class="PostComment" action="/posts/<%= posts[i]._id %>" method="post">
-                  Name: <input type="text" name="name" value="Sample Name">
-                  Comment: <input type="text" name="comment" value="Sample Comment">
-                  <button type="submit" name="button">Post Comment</button>
+                  Name: <input type="text" name="name" value="Sample Name"><br>
+                  Comment: <input type="text" name="comment" style="width:350px;height:20px;"  value="Sample Comment"><br>
+                  <button type="submit" name="button">Post Comment</button><br>
           </form>
           <% }%>
 
