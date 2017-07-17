@@ -60,12 +60,17 @@ class MyNode {
 // function sendingErrors() {
 // 	throw new Error('Error message');
 // }
-class myNodeInstnace = new MyNode(1);
+// Void (returns nothing)
+
+var myNodeInstnace = new MyNode(1);
+
 console.log(myNodeInstnace.val);
-function myFunction() {
+
+function myFunction(): any{
     console.log("Hello World");
     return;
 }
-function sendingErrors() {
+
+function sendingErrors(): void{
 	throw new Error('Error message');
 }
