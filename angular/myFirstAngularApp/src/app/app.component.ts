@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from './user';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  user = {
-    firstName: '',
-    lastName: ''
-  }
+  user = new User();
+  users = [];
   onSubmit(){
-    console.log("onSubmit()");
+    this.users.push(this.user);
+    this.user = new User();
     console.log("Hi I'm printing on submit button");
   };
 

@@ -12,9 +12,44 @@
   <label>First Name</label>
 </form>
 
-<form (submit)='onSubmit()'>
-  <input type="text" name="firstName" [(ngModel)]= 'user.firstName'>
-  <input type="text" name="lastName">
+<form (submit)="onSubmit()"> <br>
+  email: <input 
+    type="text" 
+    name="email" 
+    required 
+    minlength="4" 
+    maxlength="24"
+    [(ngModel)]="user.email"
+    #email='ngModel'
+  /> <br>
+  first_name <input 
+    type="text" 
+    name="first_name" 
+    required 
+    minlength="4" 
+    maxlength="24"
+    [(ngModel)]="user.first_name"
+    #first_name='ngModel'
+  /> <br>
+  last_name <input 
+    type="text" 
+    name="last_name" 
+    required 
+    minlength="4" 
+    maxlength="24"
+    [(ngModel)]="user.last_name"
+    #last_name='ngModel'
+  /> <br>
+  password <input 
+    type="text" 
+    name="password" 
+    required 
+    minlength="10" 
+    maxlength="24"
+    pattern="^([a-zA-Z0-9@*#]{8,15})$"
+    [(ngModel)]="user.password"
+    #password='ngModel'
+  /> <br>
   <input type="submit">
 </form>
 
