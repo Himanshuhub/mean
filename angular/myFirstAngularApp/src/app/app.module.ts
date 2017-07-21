@@ -6,11 +6,15 @@ import { HttpModule }    from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MyComponentComponent } from './my-component/my-component.component';
+import { TaskComponent } from './task/task.component';
+import { NoteComponent } from './note/note.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyComponentComponent
+    MyComponentComponent,
+    TaskComponent,
+    NoteComponent
   ],
   imports: [
     BrowserModule, 
