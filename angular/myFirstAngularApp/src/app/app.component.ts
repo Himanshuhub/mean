@@ -7,6 +7,11 @@ import { User } from './user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  tasks: any[] = [
+    {title: 'first task'}, 
+    {title: 'second task'}
+  ];
+  constructor(){}
   user = new User();
   users = [];
   onSubmit(){

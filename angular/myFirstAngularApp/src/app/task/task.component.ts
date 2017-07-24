@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task.component.css']
 })
 export class TaskComponent implements OnInit {
+  // @Input() myTasks;
 
   constructor() { }
+   dataFromChild(eventData){
+    console.log(eventData);
+  }
 
   ngOnInit() {
   }

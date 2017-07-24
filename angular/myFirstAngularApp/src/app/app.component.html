@@ -8,7 +8,7 @@
 
 <h1>App Component</h1>
 <app-note></app-note>
-<app-task></app-task>
+<app-task (aTaskEventEmitter)="dataFromChild($event)"> </app-task>
 
 <h1> Form Registration </h1>
 
